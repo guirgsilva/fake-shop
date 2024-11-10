@@ -1,0 +1,10 @@
+# flask-configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: flask-config
+data:
+  DB_HOST: "postgres-service"      # The PostgreSQL service name in Kubernetes
+  DB_PORT: "5432"                  # Default port for PostgreSQL
+  FLASK_ENV: "production"
+  DATABASE_URL: "postgresql://$(DB_USER):$(DB_PASSWORD)@$(DB_HOST):$(DB_PORT)/$(DB_NAME)"
