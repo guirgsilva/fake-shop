@@ -1,5 +1,3 @@
-Certainly! Here’s the documentation formatted as a `README.md` file for GitHub:
-
 ```markdown
 # Fake Shop - Flask Application with PostgreSQL on EKS
 
@@ -222,8 +220,3 @@ This project deploys a Flask application with a PostgreSQL database on an AWS EK
 2. Access the application using the external IP of `flask-app-service`.
 
 ---
-
-This documentation covers the steps to deploy the Flask application and PostgreSQL on EKS using Helm. For further customization or troubleshooting, feel free to reach out.
-```
-
-This `README.md` can be added directly to your GitHub repository. Let me know if you'd like any more details added!
