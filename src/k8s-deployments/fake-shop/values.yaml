@@ -1,0 +1,8 @@
+flaskApp:
+  replicaCount: 2
+  image: guilhermergsilva/fake-shop:latest
+
+postgres:
+  user: "ecommerce"
+  password: "Pg1234"
+  db: "ecommerce"

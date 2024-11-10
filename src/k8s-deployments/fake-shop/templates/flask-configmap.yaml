@@ -1,0 +1,10 @@
+# templates/flask-configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-flask-config
+data:
+  FLASK_ENV: "production"
+  DB_HOST: "{{ .Release.Name }}-postgres-service"
+  DB_PORT: "5432"
+  DATABASE_URL: "postgresql://$(DB_USER):$(DB_PASSWORD)@$(DB_HOST):$(DB_PORT)/$(DB_NAME)"

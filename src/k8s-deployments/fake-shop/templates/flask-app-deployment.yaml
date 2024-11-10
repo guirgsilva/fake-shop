@@ -1,0 +1,25 @@
+# templates/flask-app-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-flask-app
+spec:
+  replicas: {{ .Values.flaskApp.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-flask-app
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-flask-app
+    spec:
+      containers:
+      - name: flask-app
+        image: {{ .Values.flaskApp.image }}
+        ports:
+        - containerPort: 5000
+        envFrom:
+        - configMapRef:
+            name: {{ .Release.Name }}-flask-config
+        - secretRef:
+            name: {{ .Release.Name }}-postgres-secret
